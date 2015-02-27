@@ -1,0 +1,22 @@
+{
+  "name": "vincegiorno.github.io",
+  "version": "1.0.0",
+  "description": "P4 web optimization project",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vincegiorno/vincegiorno.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vincegiorno/vincegiorno.github.io/issues"
+  },
+  "homepage": "https://github.com/vincegiorno/vincegiorno.github.io",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
+}
