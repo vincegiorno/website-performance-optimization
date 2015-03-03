@@ -4,24 +4,18 @@ var gulp = require('gulp'),
 
 gulp.task('js', function() {
     return gulp.src('src/**/*.js')
-    .pipe(aux.cached('jsfiles'))
     .pipe(aux.uglify())
     .pipe(gulp.dest('.'));
 });
 
 gulp.task('img', function() {
 	return gulp.src(['src/**/*.jpg', 'src/**/*.jpeg', 'src/**/*.png', 'src/**/*.gif'])
-	//.pipe(aux.cached('imagefiles'))
 	.pipe(aux.imagemin())
 	.pipe(gulp.dest('.'));
 });
 
 gulp.task('css', function() {
 	return gulp.src('src/**/*.css')
-	//.pipe(aux.cached('cssfiles'))
-	//.pipe(aux.uncss({
-	//	html: ['src/**/*.html']
-	//}))
 	.pipe(aux.minifyCss())
 	.pipe(gulp.dest('.'));
 });
