@@ -403,6 +403,7 @@ var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
   // Changes the value for the size of the pizza above the slider
+  // Replaced querySelector with getElementById
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
@@ -422,6 +423,7 @@ var resizePizzas = function(size) {
   changeSliderLabel(size);
 
   // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
+  // Replaced querySelector with getElementById
   function determineDx (elem, size) {
     var oldwidth = elem.offsetWidth;
     var windowwidth = document.getElementById("randomPizzas").offsetWidth;
@@ -449,6 +451,8 @@ var resizePizzas = function(size) {
   }
 
   // Iterates through pizza elements on the page and changes their widths
+  // using getElementsByClassName instead of querySelectorAll,
+  // storing results in var pizza, each iteration as var thisPizza
   function changePizzaSizes(size) {
     var pizzas = document.getElementsByClassName("randomPizzaContainer");
     for (var i = 0; i < pizzas.length; i++) {
@@ -504,9 +508,18 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
+  // replaced querySelectorAll with getElementsByClassName
+  // replaced modulo with k counter
   var items = document.getElementsByClassName("mover");
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+  for (var i = 0, k = 0; i < items.length; i++) {
+    var phase = Math.sin((document.body.scrollTop / 1250) + k);
+    console.log('modulo: ' + i % 5 + '\n');
+    console.log('k: ' + k + '\n');
+    if (k == 4) {
+      k = 0;
+    } else {
+      k++;
+    }
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
