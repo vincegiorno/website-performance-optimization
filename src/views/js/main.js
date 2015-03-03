@@ -513,8 +513,6 @@ function updatePositions() {
   var items = document.getElementsByClassName("mover");
   for (var i = 0, k = 0; i < items.length; i++) {
     var phase = Math.sin((document.body.scrollTop / 1250) + k);
-    console.log('modulo: ' + i % 5 + '\n');
-    console.log('k: ' + k + '\n');
     if (k == 4) {
       k = 0;
     } else {
