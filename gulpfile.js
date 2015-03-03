@@ -26,4 +26,10 @@ gulp.task('css', function() {
 	.pipe(gulp.dest('.'));
 });
 
+gulp.task('html', function() {
+	return gup.src('src/**/*.html')
+	.pipe(ayx.minifyHtml())
+	.pipe(gulp.dest('.'));
+});
+
 gulp.task('default', ['js', 'img', 'css']);
