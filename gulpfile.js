@@ -19,7 +19,9 @@ gulp.task('img', function() {
 gulp.task('css', function() {
 	return gulp.src('src/**/*.css')
 	.pipe(aux.cached('cssfiles'))
-	.pipe(aux.uncss())
+	.pipe(aux.uncss({
+		html: ['src/**/*.html']
+	}))
 	.pipe(aux.minifyCss())
 	.pipe(gulp.dest('.'));
 });
