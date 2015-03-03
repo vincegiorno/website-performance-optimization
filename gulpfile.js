@@ -27,9 +27,9 @@ gulp.task('css', function() {
 });
 
 gulp.task('html', function() {
-	return gup.src('src/**/*.html')
-	.pipe(ayx.minifyHtml())
+	return gulp.src('src/**/*.html')
+	.pipe(aux.minifyHtml())
 	.pipe(gulp.dest('.'));
 });
 
-gulp.task('default', ['js', 'img', 'css']);
+gulp.task('default', ['js', 'img', 'css', 'html']);
