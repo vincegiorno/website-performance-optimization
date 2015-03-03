@@ -10,14 +10,14 @@ gulp.task('js', function() {
 });
 
 gulp.task('img', function() {
-	return gulp.src(['./**/*.jpg', './**/*.jpeg', './**/*.png', './**/*.gif'])
+	return gulp.src(['src/**/*.jpg', './**/*.jpeg', './**/*.png', './**/*.gif'])
 	.pipe(aux.cached('imagefiles'))
 	.pipe(aux.imagemin())
 	.pipe(gulp.dest('.'));
 });
 
 gulp.task('css', function() {
-	return gulp.src('./**/*.css')
+	return gulp.src('src/**/*.css')
 	.pipe(aux.cached('cssfiles'))
 	.pipe(aux.uncss())
 	.pipe(aux.minifyCss())
