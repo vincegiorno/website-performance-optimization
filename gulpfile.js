@@ -10,7 +10,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('img', function() {
-	return gulp.src(['src/**/*.jpg', './**/*.jpeg', './**/*.png', './**/*.gif'])
+	return gulp.src(['src/**/*.jpg', 'src/**/*.jpeg', 'src/**/*.png', 'src/**/*.gif'])
 	.pipe(aux.cached('imagefiles'))
 	.pipe(aux.imagemin())
 	.pipe(gulp.dest('.'));
