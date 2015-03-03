@@ -11,17 +11,17 @@ gulp.task('js', function() {
 
 gulp.task('img', function() {
 	return gulp.src(['src/**/*.jpg', 'src/**/*.jpeg', 'src/**/*.png', 'src/**/*.gif'])
-	.pipe(aux.cached('imagefiles'))
+	//.pipe(aux.cached('imagefiles'))
 	.pipe(aux.imagemin())
 	.pipe(gulp.dest('.'));
 });
 
 gulp.task('css', function() {
 	return gulp.src('src/**/*.css')
-	.pipe(aux.cached('cssfiles'))
-	.pipe(aux.uncss({
-		html: ['src/**/*.html']
-	}))
+	//.pipe(aux.cached('cssfiles'))
+	//.pipe(aux.uncss({
+	//	html: ['src/**/*.html']
+	//}))
 	.pipe(aux.minifyCss())
 	.pipe(gulp.dest('.'));
 });
