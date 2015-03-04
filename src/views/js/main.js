@@ -454,10 +454,11 @@ var resizePizzas = function(size) {
   // using getElementsByClassName instead of querySelectorAll,
   // storing results in var pizza
   function changePizzaSizes(size) {
-    var pizzas = document.getElementsByClassName("randomPizzaContainer");
+    var pizzas = document.getElementsByClassName("randomPizzaContainer"),
+        dx = determineDx(pizzas[0], size),
+        newwidth = (pizzas[0].offsetWidth + dx) + 'px';
+
     for (var i = 0; i < pizzas.length; i++) {
-      var dx = determineDx(pizzas[i], size);
-      var newwidth = (pizzas[i].offsetWidth + dx) + 'px';
       pizzas[i].style.width = newwidth;
     }
   }
