@@ -452,7 +452,7 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   // using getElementsByClassName instead of querySelectorAll,
-  // storing results in var pizza
+  // storing results in var pizza, moved dx, newwidth to 1 calc outside loop
   function changePizzaSizes(size) {
     var pizzas = document.getElementsByClassName("randomPizzaContainer"),
         dx = determineDx(pizzas[0], size),
@@ -509,9 +509,12 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   // replaced querySelectorAll with getElementsByClassName
-  var items = document.getElementsByClassName("mover");
+  // moved document.body.scrollTop/125 calc out of loop into var base
+  var items = document.getElementsByClassName("mover"),
+      base = document.body.scrollTop / 1250;
+
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    var phase = Math.sin(base + i % 5);
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
