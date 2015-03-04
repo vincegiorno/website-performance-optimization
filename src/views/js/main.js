@@ -533,10 +533,11 @@ function updatePositions() {
 window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
+// 3 sliding pizzas reduced to 48, enough to fill portrait orientation on mobile
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 6;
   var s = 256;
-  for (var i = 0; i < 18; i++) {
+  for (var i = 0; i < 48; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
