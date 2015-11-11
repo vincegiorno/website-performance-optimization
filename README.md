@@ -1,6 +1,6 @@
 The running optimized site is at http://vincegiorno.github.io/
 
-This repository is a copy of the files there, with the production index.html in the root and other filed relative to it. The source files are in the src directory. gulpfile.js and its allied files and modules are also in the root. The files before optimization are in the frontend-nanodegree-mobile-portfolio repository.
+This repository is a copy of the files there, with the production index.html in the root and other files relative to it. The source files are in the src directory. gulpfile.js and its allied files and modules are also in the root. The files before optimization are in the frontend-nanodegree-mobile-portfolio repository.
 
 Optimization was achieved in several ways. To speed the initial loading time, I
 <ul><li>used a @media attribute on the print.css link</li>
